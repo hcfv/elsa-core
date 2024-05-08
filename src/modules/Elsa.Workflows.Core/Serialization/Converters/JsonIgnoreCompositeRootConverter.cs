@@ -24,7 +24,7 @@ public class JsonIgnoreCompositeRootConverter : JsonConverter<IActivity>
     {
         writer.WriteStartObject();
 
-        var properties = value?.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance) ?? Array.Empty<PropertyInfo>();
+        var properties = value?.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance) ?? [];
         
         foreach (var property in properties)
         {
